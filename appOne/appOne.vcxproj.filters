@@ -5,6 +5,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Actor">
+      <UniqueIdentifier>{bfb383dc-16b8-4f35-8557-7d04577126cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component">
+      <UniqueIdentifier>{33253f15-d48c-4083-94c9-58412ebdd0e7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="resource.rc">
@@ -19,32 +25,80 @@
   <ItemGroup>
     <ClCompile Include="gmain.cpp" />
     <ClCompile Include="Game.cpp" />
-    <ClCompile Include="Actor.cpp" />
-    <ClCompile Include="Component.cpp" />
-    <ClCompile Include="SpriteComponent.cpp" />
-    <ClCompile Include="BGSpriteComponent.cpp" />
-    <ClCompile Include="AnimSpriteComponent.cpp" />
-    <ClCompile Include="Ship.cpp" />
-    <ClCompile Include="MoveComponent.cpp" />
-    <ClCompile Include="InputComponent.cpp" />
-    <ClCompile Include="ShipLaser.cpp" />
-    <ClCompile Include="Rock.cpp" />
-    <ClCompile Include="ExplosionB.cpp" />
-    <ClCompile Include="CircleComponent.cpp" />
+    <ClCompile Include="Actor.cpp">
+      <Filter>Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="ExplosionB.cpp">
+      <Filter>Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="Rock.cpp">
+      <Filter>Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="Ship.cpp">
+      <Filter>Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="ShipLaser.cpp">
+      <Filter>Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimSpriteComponent.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="BGSpriteComponent.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="CircleComponent.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Component.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="InputComponent.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="MoveComponent.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteComponent.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
-    <ClInclude Include="Actor.h" />
-    <ClInclude Include="Component.h" />
-    <ClInclude Include="SpriteComponent.h" />
-    <ClInclude Include="BGSpriteComponent.h" />
-    <ClInclude Include="AnimSpriteComponent.h" />
-    <ClInclude Include="Ship.h" />
-    <ClInclude Include="MoveComponent.h" />
-    <ClInclude Include="InputComponent.h" />
-    <ClInclude Include="ShipLaser.h" />
-    <ClInclude Include="Rock.h" />
-    <ClInclude Include="ExplosionB.h" />
-    <ClInclude Include="CircleComponent.h" />
+    <ClInclude Include="Actor.h">
+      <Filter>Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="ExplosionB.h">
+      <Filter>Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="Rock.h">
+      <Filter>Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="Ship.h">
+      <Filter>Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="ShipLaser.h">
+      <Filter>Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimSpriteComponent.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="BGSpriteComponent.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="CircleComponent.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Component.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="InputComponent.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveComponent.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteComponent.h">
+      <Filter>Component</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
