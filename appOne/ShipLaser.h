@@ -6,9 +6,10 @@ class ShipLaser :
 public:
     ShipLaser(class Game*);
     void UpdateActor() override;
+    void SetSpeed(float speed);
+    void SetDirection(const VECTOR2& direction);
 private:
     class MoveComponent* mMove;
-    class CircleComponent* mCircle;
-    float mLifeTime;
+    class RectComponent* mRect;
 };
 

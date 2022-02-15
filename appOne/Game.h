@@ -26,13 +26,13 @@ private:
 
 	//Ç±ÇÃGameå≈óLÇÃãLèq
 public:
-	void AddRock(class Rock* rock);
-	void RemoveRock(class Rock* rock);
-	std::vector<class Rock*>& GetRocks() { return mRocks; }
+	void AddUfo(class Ufo* ufo);
+	void RemoveUfo(class Ufo* ufo);
+	std::vector<class Ufo*>& GetUfos() { return mUfos; }
 	void SetShip(class Ship* ship) { mShip = ship; }
 	class Ship* GetShip() { return mShip; }
 private:
-	std::vector<class Rock*> mRocks;
+	std::vector<class Ufo*> mUfos;
 	class Ship* mShip;
 };
 

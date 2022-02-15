@@ -4,34 +4,39 @@
 #include "window.h"
 #include "BGSpriteComponent.h"
 #include "AnimSpriteComponent.h"
-#include "Rock.h"
+#include "Ufo.h"
 #include "Ship.h"
-#include "ExplosionB.h"
 
 bool Game::Initialize()
 {
     window(1024, 768);
 
-    Actor* a;
+    new Ship(this);
 
+    auto ufo = new Ufo(this);
+    ufo->SetPosition(VECTOR2(width / 4 * 3, height/2 - 100));
+
+    ufo = new Ufo(this);
+    ufo->SetPosition(VECTOR2(width / 4 * 3, height/2 + 100));
+    ufo->SetTheta(3.14f);
+
+    ufo = new Ufo(this);
+    ufo->SetPosition(VECTOR2(width / 4 * 3, height / 2 - 100));
+    ufo->SetTheta(3.14f);
+
+    ufo = new Ufo(this);
+    ufo->SetPosition(VECTOR2(width / 4 * 3, height / 2 + 100));
+
+    Actor* a;
     a = new Actor(this);
     auto bg = new BGSpriteComponent(a, 50);
-    bg->SetScrollSpeed(5);
+    bg->SetScrollSpeed(100);
     bg->SetImage(loadImage("Assets\\FarBack01.png"));
     bg->SetImage(loadImage("Assets\\FarBack02.png"));
     bg = new BGSpriteComponent(a, 60);
-    bg->SetScrollSpeed(10);
+    bg->SetScrollSpeed(200);
     bg->SetImage(loadImage("Assets\\Stars.png"));
     bg->SetImage(loadImage("Assets\\Stars.png"));
-
-    new Ship(this);
-
-    for(int i=0;i<30;i++)new Rock(this);
-
-    a = new ExplosionB(this);
-    a->SetPosition(VECTOR2(-200, 0));
-
-
 
     initDeltaTime();
     return true;
@@ -152,7 +157,7 @@ void Game::UpdateGame()
 
 void Game::GenerateOutput()
 {
-    clear(0);
+    clear(60);
     for (auto sprite : mSprites)
     {
         sprite->Draw();
@@ -160,17 +165,17 @@ void Game::GenerateOutput()
 }
 
 //このゲームに固有のロジック
-void Game::AddRock(Rock* rock)
+void Game::AddUfo(Ufo* ufo)
 {
-    mRocks.emplace_back(rock);
+    mUfos.emplace_back(ufo);
 }
 
-void Game::RemoveRock(Rock* rock)
+void Game::RemoveUfo(Ufo* ufo)
 {
-    auto iter = std::find(mRocks.begin(), mRocks.end(), rock);
-    if (iter != mRocks.end())
+    auto iter = std::find(mUfos.begin(), mUfos.end(), ufo);
+    if (iter != mUfos.end())
     {
-        std::iter_swap(iter, mRocks.end() - 1);
-        mRocks.pop_back();
+        std::iter_swap(iter, mUfos.end() - 1);
+        mUfos.pop_back();
     }
 }

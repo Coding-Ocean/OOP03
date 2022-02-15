@@ -153,41 +153,41 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Actor.cpp" />
-    <ClCompile Include="AnimSpriteComponent.cpp" />
-    <ClCompile Include="BGSpriteComponent.cpp" />
-    <ClCompile Include="CircleComponent.cpp" />
-    <ClCompile Include="Component.cpp" />
-    <ClCompile Include="ExplosionB.cpp" />
-    <ClCompile Include="Game.cpp" />
-    <ClCompile Include="gmain.cpp" />
-    <ClCompile Include="InputComponent.cpp" />
-    <ClCompile Include="MoveComponent.cpp" />
-    <ClCompile Include="Rock.cpp" />
-    <ClCompile Include="Ship.cpp" />
-    <ClCompile Include="ShipLaser.cpp" />
-    <ClCompile Include="SpriteComponent.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <ResourceCompile Include="resource.rc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Actor.cpp" />
+    <ClCompile Include="AnimSpriteComponent.cpp" />
+    <ClCompile Include="BGSpriteComponent.cpp" />
+    <ClCompile Include="Component.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="gmain.cpp" />
+    <ClCompile Include="InputComponent.cpp" />
+    <ClCompile Include="Laser.cpp" />
+    <ClCompile Include="MoveComponent.cpp" />
+    <ClCompile Include="RectComponent.cpp" />
+    <ClCompile Include="Ship.cpp" />
+    <ClCompile Include="ShipLaser.cpp" />
+    <ClCompile Include="SpriteComponent.cpp" />
+    <ClCompile Include="Ufo.cpp" />
+  </ItemGroup>
+  <ItemGroup>
     <ClInclude Include="Actor.h" />
     <ClInclude Include="AnimSpriteComponent.h" />
     <ClInclude Include="BGSpriteComponent.h" />
-    <ClInclude Include="CircleComponent.h" />
     <ClInclude Include="Component.h" />
-    <ClInclude Include="ExplosionB.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="InputComponent.h" />
+    <ClInclude Include="Laser.h" />
     <ClInclude Include="MoveComponent.h" />
-    <ClInclude Include="Rock.h" />
+    <ClInclude Include="RectComponent.h" />
     <ClInclude Include="Ship.h" />
     <ClInclude Include="ShipLaser.h" />
     <ClInclude Include="SpriteComponent.h" />
+    <ClInclude Include="Ufo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

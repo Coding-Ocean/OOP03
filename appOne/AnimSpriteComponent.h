@@ -10,12 +10,10 @@ public:
     void Update() override;
     void Draw() override;
     void SetInterval(float interval) { mInterval = interval; }
-    void NoLoop() { mLoop=false; };
 private:
     std::vector<int>mImgs;
     int mCurIdx;
     float mTimer;
     float mInterval;
-    bool mLoop;
 };
 

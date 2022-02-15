@@ -5,7 +5,7 @@
 #include "input.h"
 #include "InputComponent.h"
 #include "AnimSpriteComponent.h"
-#include "CircleComponent.h"
+#include "RectComponent.h"
 #include "ShipLaser.h"
 
 Ship::Ship(Game* game)
@@ -17,7 +17,7 @@ Ship::Ship(Game* game)
     SetScale(1.5f);
 
 	auto ic = new InputComponent(this);
-	ic->SetForwardVelocity(200);
+	ic->SetMoveSpeed(300);
 
     mAnimSprite = new AnimSpriteComponent(this);
     mAnimSprite->SetInterval(0.016f * 3);
@@ -26,8 +26,9 @@ Ship::Ship(Game* game)
     mAnimSprite->AddImage(loadImage("Assets\\Ship03.png"));
     mAnimSprite->AddImage(loadImage("Assets\\Ship04.png"));
 
-	mCircle = new CircleComponent(this, 150);
-	mCircle->SetRadius(20);
+	mRect = new RectComponent(this, 150);
+	mRect->SetHalfW(10);
+	mRect->SetHalfH(30);
 
 	mHP = 50;
 
@@ -49,10 +50,9 @@ void Ship::ActorInput()
 			mTimer -= mInterval;
 			auto laser = new ShipLaser(GetGame());
 			//”­ŽËˆÊ’u‚ð‚¸‚ç‚·
-			float angle = GetRotation();
-			laser->SetRotation(angle);
-			VECTOR2 pos = GetPosition()+VECTOR2(cos(angle),sin(angle))*60;
+			VECTOR2 pos = GetPosition()+VECTOR2(60,0);
 			laser->SetPosition(pos);
+			laser->SetDirection(VECTOR2(1,0));
 		}
 	}
 	else

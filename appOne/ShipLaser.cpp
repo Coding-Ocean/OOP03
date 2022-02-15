@@ -3,40 +3,50 @@
 #include "window.h"
 #include "MoveComponent.h"
 #include "SpriteComponent.h"
-#include "CircleComponent.h"
+#include "RectComponent.h"
 #include "Game.h"
-#include "Rock.h"
+#include "Ufo.h"
 
 ShipLaser::ShipLaser(Game* game)
 	:Actor(game)
 {
-	mLifeTime = 1.5f;
-
-	mMove = new MoveComponent(this,50);
-	mMove->SetForwardSpeed(600);
+	mMove = new MoveComponent(this);
+	mMove->SetSpeed(600);
 
 	auto sc = new SpriteComponent(this, 50);
 	sc->SetImage(loadImage("Assets\\Laser.png"));
 
-	mCircle = new CircleComponent(this);
-	mCircle->SetRadius(9);
+	mRect = new RectComponent(this, 110);
+	mRect->SetHalfW(14);
+	mRect->SetHalfH(6);
 }
 
 void ShipLaser::UpdateActor()
 {
-	mLifeTime -= delta;
-	if (mLifeTime<=0.0f)
+	//ウィンドウの外に出たらDead
+	VECTOR2 pos = GetPosition();
+	if (pos.x < -50 || pos.x > width + 50)
 	{
 		SetState(EDead);
 	}
 	else{
 		//衝突判定
-		for (auto rock : GetGame()->GetRocks()) {
-			if (Intersect(mCircle, rock->GetCircle()))
+		for (auto ufo : GetGame()->GetUfos()) {
+			if (Intersect(mRect, ufo->GetRect()))
 			{
 				SetState(EDead);
-				rock->Damage();
+				ufo->Damage();
 			}
 		}
 	}
+}
+
+void ShipLaser::SetSpeed(float speed)
+{
+	mMove->SetSpeed(speed);
+}
+
+void ShipLaser::SetDirection(const VECTOR2& direction)
+{
+	mMove->SetDirection(direction);
 }

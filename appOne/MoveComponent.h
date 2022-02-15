@@ -8,11 +8,11 @@ class MoveComponent :
 public:
     MoveComponent(class Actor* owner, int order=100);
     void Update() override;
-    void SetAngularSpeed(float speed) { mAngularSpeed = speed; }
-    void SetForwardSpeed(float speed) { mForwardSpeed = speed; }
-    float GetSpeed() { return mForwardSpeed; }
+    void SetDirection(const VECTOR2& direction) { mDirection = direction; }
+    void SetSpeed(float speed) { mSpeed = speed; }
+    float GetSpeed() { return mSpeed; }
 private:
-    float mForwardSpeed;
-    float mAngularSpeed;
+    VECTOR2 mDirection;
+    float mSpeed;
 };
 
